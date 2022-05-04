@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+
+.home-container {
+    background-repeat: no-repeat;
+    background-image: url("../../images/1.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-button {
+    margin: 30px;
+    font-size: 25px;
+    border: solid;
+    border-radius: 20px;
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#register-button {
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid black;
+    background-color: #b73b51;
+}
+
+#login-button {
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid black;
+    background-color: #8f39b7;
+}
+
+#register-button:hover {
+    background: var(--color-red) url(https://i.postimg.cc/wBXGXbWN/pixel.png);
+    transition-delay: 0.6s;
+    background-size: 180px;
+    animation: animate var(--speed) steps(9) forwards;
+}
+
+#login-button:hover {
+    animation: animate var(--speed) steps(9) forwards;
+    transition-delay: 0.6s;
+    background-size: 180px;
+    background: var(--color-purple) url(https://i.postimg.cc/FzBWFtKM/pixel2.png);
+}
+
+:root {
+    --color-red: #ec1840;
+    --color-purple: #7a18ec;
+    --speed: 0.8s;
+}
+
+@keyframes animate {
+    0% {
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-y: -480px;
+    }
+}
+
+#welcome-header {
+    display: flex;
+    justify-content: center;
+    padding-left: 80px;
+    padding-bottom: 10px;
+    font-family: 'font', cursive;
+    color: rgb(60, 56, 164);
+    color: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(104, 104, 175, 1) 42%, rgba(0, 212, 255, 1) 100%);
+    font-size: 60px;
+}
