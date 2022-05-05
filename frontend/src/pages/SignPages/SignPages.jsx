@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import { useNavigate, useLocation } from 'react-router-dom';
 import { register } from '../../actions/userActions'
 import './SignPages.css'
 
 const SignPages = () => {
 
     const nav = useNavigate();
-    const [state, setState] = useState(true);
+    const location = useLocation()
+    const is_register = location.pathname === '/register'
 
     const registerHandler = () => {
         const data = {
@@ -18,9 +19,12 @@ const SignPages = () => {
         navigate()
     }
 
+    // useEffect(() => {
+    //     is_register ? setState(true): setState(false)
+    // }, [location]);
+
     function navigate() {
-        state ? nav("/login") : nav("/register")
-        setState(!state)
+        is_register ? nav("/login") : nav("/register")
     }
 
     return (
@@ -32,7 +36,7 @@ const SignPages = () => {
                     <input id='username' className='sign-input' type='text' placeholder='username' />
 
                     {
-                        state ?
+                        is_register ?
                             <>
                                 <label htmlFor='email' className='sign-label'>Email: </label>
                                 <input id='email' className='sign-input' type='email' placeholder='email@email.com' />
@@ -42,12 +46,12 @@ const SignPages = () => {
                     <label htmlFor='password' className='sign-label'>Password: </label>
                     <input id='password' className='sign-input' type='password' placeholder='···········' autoComplete='off' />
 
-                    <input id='submit-button' type='submit' value={state ? 'Register' : 'Login'}
-                            onClick={state ? registerHandler : null} />
+                    <input id='submit-button' type='submit' value={is_register ? 'Register' : 'Login'}
+                        onClick={is_register ? registerHandler : null} />
 
                     <button id='nav-button' onClick={navigate}>
                         {
-                            state ? 'Already have an account?' : "Don't have an account?"
+                            is_register ? 'Already have an account?' : "Don't have an account?"
                         }
                     </button>
                 </form>

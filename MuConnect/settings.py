@@ -29,6 +29,10 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'ff4cbc0b7b5f17'
+EMAIL_HOST_PASSWORD = '9c604a35bfda06'
+EMAIL_PORT = '2525'
 
 # Application definition
 
@@ -45,7 +49,7 @@ INSTALLED_APPS = [
     'accounts',
     'chat',
     'spotify',
-    'core'
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -64,7 +68,7 @@ ROOT_URLCONF = 'MuConnect.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'frontend/build']
+        'DIRS': [BASE_DIR / 'frontend/build', BASE_DIR / 'templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

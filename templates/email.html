@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+        <h2>Thank you for registering at Econnect!</h2>
+        <p>To complete registration please click the link below:</p>
+        <a href="http://localhost:8000/users/verification/ + {{ token }}"></a>
+    </body>
+
+{% endblock %}
