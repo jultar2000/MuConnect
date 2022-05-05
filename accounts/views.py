@@ -11,6 +11,7 @@ class CreateUser(APIView):
         model_serializer = UserSerializer(data=request.data)
         if model_serializer.is_valid():
             user = model_serializer.save()
+
             if user:
                 return Response(
                     {'Please confirm your email to complete registration.': model_serializer.data},

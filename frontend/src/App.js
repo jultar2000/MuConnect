@@ -5,7 +5,7 @@ import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import SignPages from './pages/SignPages/SignPages';
 
 const Routes = () => useRoutes([
-  { path: '/home', element: <HomePage /> },
+  { path: '/', element: <HomePage /> },
   { path: '/register', element: <SignPages /> },
   { path: '/login', element: <SignPages/> }
 ])
